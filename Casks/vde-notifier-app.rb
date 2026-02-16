@@ -1,6 +1,6 @@
 cask "vde-notifier-app" do
-  version "0.1.2"
-  sha256 "128a73fc3975a4126d17737238fe383b97754a6adfdd8e5d72f380d6789dbb0a"
+  version "0.1.3"
+  sha256 "3d64934929a1affc18b455d76b016949d07ad9c53bcf94072eb89742e9b6bbed"
 
   url "https://github.com/yuki-yano/vde-notifier/releases/download/app-v#{version}/VdeNotifierApp.app.tar.gz"
   name "VdeNotifierApp"
