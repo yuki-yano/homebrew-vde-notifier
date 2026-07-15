@@ -4,7 +4,7 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CASK_NAME="${CASK_NAME:-vde-notifier-app}"
 CASK_PATH="${REPO_ROOT}/Casks/${CASK_NAME}.rb"
-AUDIT_TAP_NAME="${AUDIT_TAP_NAME:-local/vde-notifier}"
+AUDIT_TAP_NAME="${AUDIT_TAP_NAME:-local/vde-notifier-audit-${GITHUB_RUN_ID:-$$}}"
 
 brew style "${CASK_PATH}"
 
@@ -26,4 +26,4 @@ cleanup() {
 }
 trap cleanup EXIT
 
-brew audit --cask --strict --online --no-signing "${AUDIT_TAP_NAME}/${CASK_NAME}"
+brew audit --cask --strict --online "${AUDIT_TAP_NAME}/${CASK_NAME}"
