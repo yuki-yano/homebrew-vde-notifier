@@ -14,7 +14,7 @@ if ! git -C "${REPO_ROOT}" rev-parse --verify HEAD >/dev/null 2>&1; then
 fi
 
 added_tap=0
-if ! brew tap | rg -xq "${AUDIT_TAP_NAME}"; then
+if ! brew tap | grep -Fxq "${AUDIT_TAP_NAME}"; then
   brew tap "${AUDIT_TAP_NAME}" "${REPO_ROOT}" >/dev/null
   added_tap=1
 fi
