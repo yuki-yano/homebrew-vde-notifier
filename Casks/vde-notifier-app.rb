@@ -13,7 +13,7 @@ cask "vde-notifier-app" do
     strategy :github_releases
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "VdeNotifierApp.app"
   binary "#{appdir}/VdeNotifierApp.app/Contents/MacOS/vde-notifier-app"
