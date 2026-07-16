@@ -12,9 +12,10 @@ Currently provided:
 brew install --cask yuki-yano/vde-notifier/vde-notifier-app
 ```
 
-After installation, confirm the app/CLI is available:
+The Cask installs the user-facing CLI and the resident-agent management command:
 
 ```bash
+vde-notifier --version
 vde-notifier-app doctor
 ```
 

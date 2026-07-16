@@ -4,7 +4,7 @@ cask "vde-notifier-app" do
 
   url "https://github.com/yuki-yano/vde-notifier/releases/download/app-v#{version}/VdeNotifierApp.app.tar.gz"
   name "VdeNotifierApp"
-  desc "Swift notification backend for vde-notifier"
+  desc "Swift tmux notification CLI and resident agent"
   homepage "https://github.com/yuki-yano/vde-notifier"
 
   livecheck do
@@ -16,6 +16,7 @@ cask "vde-notifier-app" do
   depends_on macos: :sonoma
 
   app "VdeNotifierApp.app"
+  binary "#{appdir}/VdeNotifierApp.app/Contents/MacOS/vde-notifier"
   binary "#{appdir}/VdeNotifierApp.app/Contents/MacOS/vde-notifier-app"
 
   uninstall quit: "com.yuki-yano.vde-notifier-app.agent"
