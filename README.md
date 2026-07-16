@@ -9,7 +9,6 @@ Currently provided:
 ## Installation
 
 ```bash
-brew tap yuki-yano/vde-notifier
 brew install --cask yuki-yano/vde-notifier/vde-notifier-app
 ```
 
