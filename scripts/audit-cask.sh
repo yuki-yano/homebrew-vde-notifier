@@ -20,9 +20,17 @@ if ! brew tap | grep -Fxq "${AUDIT_TAP_NAME}"; then
 fi
 
 cleanup() {
+  exit_status=$?
+
   if [[ "${added_tap}" -eq 1 ]]; then
-    brew untap "${AUDIT_TAP_NAME}" >/dev/null 2>&1 || true
+    if ! brew untap --force "${AUDIT_TAP_NAME}" >/dev/null 2>&1; then
+      echo "failed to remove temporary audit tap: ${AUDIT_TAP_NAME}" >&2
+      exit_status=1
+    fi
   fi
+
+  trap - EXIT
+  exit "${exit_status}"
 }
 trap cleanup EXIT
 
